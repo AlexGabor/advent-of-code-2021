@@ -1,3 +1,7 @@
+package Day01
+
+import readInput
+
 fun part1(input: List<Int>): Int {
     return (1 until input.size).count { index ->
         input[index] > input[index - 1]
