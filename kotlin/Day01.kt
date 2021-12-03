@@ -1,3 +1,4 @@
+@file:Suppress("PackageDirectoryMismatch", "PackageName")
 package Day01
 
 import readInput
