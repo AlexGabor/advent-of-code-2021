@@ -7,7 +7,7 @@
 
 import Foundation
 
-@main
+//@main
 struct Day01 {
     
     static func part1(input: Array<Int>) -> Int {

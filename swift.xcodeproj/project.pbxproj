@@ -11,6 +11,9 @@
 		BBFB9213275763840071F5F9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFB9212275763840071F5F9 /* Utils.swift */; };
 		BBFB9225275774210071F5F9 /* Day01.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBFB9224275774210071F5F9 /* Day01.txt */; };
 		BBFB9227275774720071F5F9 /* Day01_test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBFB9226275774720071F5F9 /* Day01_test.txt */; };
+		BBFB92292761E3B60071F5F9 /* Day09.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFB92282761E3B60071F5F9 /* Day09.swift */; };
+		BBFB922B2761E40A0071F5F9 /* Day09.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBFB922A2761E40A0071F5F9 /* Day09.txt */; };
+		BBFB922D2761E41B0071F5F9 /* Day09_test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBFB922C2761E41B0071F5F9 /* Day09_test.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,6 +23,8 @@
 			dstPath = input;
 			dstSubfolderSpec = 7;
 			files = (
+				BBFB922D2761E41B0071F5F9 /* Day09_test.txt in CopyFiles */,
+				BBFB922B2761E40A0071F5F9 /* Day09.txt in CopyFiles */,
 				BBFB9227275774720071F5F9 /* Day01_test.txt in CopyFiles */,
 				BBFB9225275774210071F5F9 /* Day01.txt in CopyFiles */,
 			);
@@ -33,6 +38,9 @@
 		BBFB9212275763840071F5F9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BBFB9224275774210071F5F9 /* Day01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Day01.txt; path = input/Day01.txt; sourceTree = "<group>"; };
 		BBFB9226275774720071F5F9 /* Day01_test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Day01_test.txt; path = input/Day01_test.txt; sourceTree = "<group>"; };
+		BBFB92282761E3B60071F5F9 /* Day09.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day09.swift; sourceTree = "<group>"; };
+		BBFB922A2761E40A0071F5F9 /* Day09.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Day09.txt; path = input/Day09.txt; sourceTree = "<group>"; };
+		BBFB922C2761E41B0071F5F9 /* Day09_test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Day09_test.txt; path = input/Day09_test.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,8 @@
 		BBFB91FD27575BB00071F5F9 = {
 			isa = PBXGroup;
 			children = (
+				BBFB922C2761E41B0071F5F9 /* Day09_test.txt */,
+				BBFB922A2761E40A0071F5F9 /* Day09.txt */,
 				BBFB9226275774720071F5F9 /* Day01_test.txt */,
 				BBFB9224275774210071F5F9 /* Day01.txt */,
 				BBFB920827575BB00071F5F9 /* swift */,
@@ -69,6 +79,7 @@
 			children = (
 				BBFB920927575BB00071F5F9 /* Day01.swift */,
 				BBFB9212275763840071F5F9 /* Utils.swift */,
+				BBFB92282761E3B60071F5F9 /* Day09.swift */,
 			);
 			path = swift;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 			files = (
 				BBFB920A27575BB00071F5F9 /* Day01.swift in Sources */,
 				BBFB9213275763840071F5F9 /* Utils.swift in Sources */,
+				BBFB92292761E3B60071F5F9 /* Day09.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
