@@ -1,7 +1,7 @@
 import Foundation
 
-@main
-struct Day02 {
+//@main
+struct Day09 {
     
     static func part1(input: Array<String>) -> Int {
         var risk = 0
