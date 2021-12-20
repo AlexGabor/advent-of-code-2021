@@ -3,6 +3,7 @@
 package Day18
 
 import readInput
+import java.lang.Long.max
 
 sealed class Node {
     operator fun plus(other: Node): Node.Pair = Node.Pair(left = this, right = other, parent = null).also { root ->
@@ -91,14 +92,18 @@ private fun Node.split(): Boolean {
                 return true
             }
         }
-        (this.right as? Node.Number)?.let {
-            if (it.number >= 10) {
-                println("Split: $it")
-                this.right = Node.Pair(Node.Number(it.number / 2), Node.Number((it.number + 1) / 2), this)
-                return true
+        if (this.left!!.split()) {
+            return true
+        } else {
+            (this.right as? Node.Number)?.let {
+                if (it.number >= 10) {
+                    println("Split: $it")
+                    this.right = Node.Pair(Node.Number(it.number / 2), Node.Number((it.number + 1) / 2), this)
+                    return true
+                }
             }
+            return this.right!!.split()
         }
-        return if (this.left!!.split()) true else this.right!!.split()
     }
     return false
 }
@@ -141,17 +146,35 @@ private fun Node.Pair.addToLeftMost(value: Node.Number) {
 
 private fun Node.findExplodingPair(depth: Int = 1): Node.Pair? {
     if (this is Node.Pair) {
-        if (parent != null && this != parent?.left && this != parent?.right) {
-            null!!
-        }
         if (depth == 5) return this
         return left?.findExplodingPair(depth + 1) ?: right?.findExplodingPair(depth + 1)
     } else return null
 }
 
-fun part2(input: List<String>): Int {
+fun Node.copy(parent: Node.Pair? = null): Node = when (this) {
+    is Node.Number -> Node.Number(this.number)
+    is Node.Pair -> Node.Pair().also {
+        it.left = this.left?.copy(parent = it)
+        it.right = this.right?.copy(parent = it)
+        it.parent = parent
+    }
+}
 
-    return 0
+fun part2(input: List<String>): Long {
+    val trees: List<Node.Pair> = input.map { readTree(it) }
+
+    var maxMagnitude = 0L
+    for (t1 in trees) {
+        for (t2 in trees) {
+            if (t1 != t2)  {
+                val sum = (t1.copy() + t2.copy())
+                sum.explode()
+                val magnitude = sum.magnitude()
+                maxMagnitude = max(maxMagnitude, magnitude)
+            }
+        }
+    }
+    return maxMagnitude
 }
 
 fun main() {
@@ -159,9 +182,9 @@ fun main() {
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day18_test")
     check(part1(testInput) == 4140L)
-//    check(part2(testInput) == 112)
+    check(part2(testInput) == 3993L)
 
     val input = readInput("Day18")
     println(part1(input))
-//    println(part2(input))
+    println(part2(input))
 }
